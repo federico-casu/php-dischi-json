@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#web-app {
+    height: 100vh;
+    border: 1px solid red;
+    background-color: #06131f;
+
+    #web-app-top {
+        height: 10%;
+        border: 1px solid green;
+        display: flex;
+        align-items: center;
+
+        .container {
+
+            .logo {
+                width: fit-content;
+                aspect-ratio: 1;
+    
+                > img {
+                    width: 50px;
+                    aspect-ratio: 1;
+                }
+            }
+        }
+
+    }
+
+    #web-app-bottom {
+        height: 90%;
+        border: 1px solid salmon;
+        background-color: #1c2d3c;
+        display: flex;
+        overflow: auto;
+        padding-block: 2rem;
+        
+        > .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            border: 1px solid blue;
+            height: fit-content;
+            
+            .card {
+                flex-basis: calc(100% / 3 - (4rem / 3));
+                // height: calc(50% - 2rem);
+                border: 1px solid lime;
+                background-color: #102030;
+                border-radius: 10px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                color: white;
+
+                padding: 1rem;
+
+                .disc-cover {
+                    border: 1px solid pink;
+                    width: 80%;
+                }
+
+                .year {
+                    font-weight: bold;
+                }
+
+                
+            }
+        }
+    }
+}

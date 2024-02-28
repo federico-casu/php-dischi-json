@@ -9,10 +9,10 @@ createApp({
         }
     },
     mounted() {
-        this.getDiscs();
+        this.getalbums();
     },
     methods: {
-        getDiscs() {
+        getalbums() {
             axios
             .get(this.apiUrl)
             .then( res => {
