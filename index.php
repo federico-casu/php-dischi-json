@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-    /* ------------------------------------------------------------------
+/* ------------------------------------------------------------------
 
     Descrizione
     Dobbiamo creare una web-app che permetta di leggere una lista di dischi presente nel nostro server.
@@ -24,6 +24,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,8 +33,9 @@
     <!-- My style -->
     <link rel="stylesheet" href="./style.scss">
 </head>
+
 <body>
-    
+
     <div id="app">
         <div id="web-app">
             <div id="web-app-top">
@@ -45,18 +47,30 @@
             </div>
             <div id="web-app-bottom">
                 <div class="container">
-                    <div 
-                    v-for="(disc, index) in dischi"
-                    :key="index"
-                    class="card">
+                    <div @click="chooseAlbum(index)" v-for="(disc, index) in dischi" :key="index" class="card">
                         <figure class="disc-cover">
                             <img :src="disc.poster" :alt="disc.title">
                         </figure>
                         <h3 class="disc-title">{{ disc.title }}</h3>
                         <span class="author">{{ disc.author }}</span>
                         <span class="year">{{ disc.year }}</span>
-                    </div>                   
+                    </div>
                 </div>
+            </div>
+
+            <div 
+            v-if="selectedAlbum" 
+            id="overlay" 
+            :class="displaySelectedAlbum ? 'd-flex' : 'd-none'">
+                <div class="card">
+                    <figure class="disc-cover">
+                        <img :src="selectedAlbum.poster" :alt="selectedAlbum.title">
+                    </figure>
+                    <h3 class="disc-title">{{ selectedAlbum.title }}</h3>
+                    <span class="author">{{ selectedAlbum.author }}</span>
+                    <span class="year">{{ selectedAlbum.year }}</span>
+                </div>
+                <span @click="toggleDisplay">X</span>
             </div>
         </div>
 
@@ -71,4 +85,5 @@
     <!-- My script -->
     <script src="./js/main.js"></script>
 </body>
+
 </html>

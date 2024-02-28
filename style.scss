@@ -18,14 +18,23 @@ html {
     margin: 0 auto;
 }
 
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
 #web-app {
     height: 100vh;
-    border: 1px solid red;
+    // border: 1px solid red;
     background-color: #06131f;
+    position: relative;
 
     #web-app-top {
         height: 10%;
-        border: 1px solid green;
+        // border: 1px solid green;
         display: flex;
         align-items: center;
 
@@ -46,7 +55,7 @@ html {
 
     #web-app-bottom {
         height: 90%;
-        border: 1px solid salmon;
+        // border: 1px solid salmon;
         background-color: #1c2d3c;
         display: flex;
         overflow: auto;
@@ -56,15 +65,16 @@ html {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            border: 1px solid blue;
+            // border: 1px solid blue;
             height: fit-content;
             
             .card {
                 flex-basis: calc(100% / 3 - (4rem / 3));
                 // height: calc(50% - 2rem);
-                border: 1px solid lime;
+                // border: 1px solid lime;
                 background-color: #102030;
                 border-radius: 10px;
+                cursor: pointer;
 
                 display: flex;
                 flex-direction: column;
@@ -75,7 +85,7 @@ html {
                 padding: 1rem;
 
                 .disc-cover {
-                    border: 1px solid pink;
+                    // border: 1px solid pink;
                     width: 80%;
                 }
 
@@ -87,4 +97,59 @@ html {
             }
         }
     }
+
+    #overlay {
+        height: 95vh;
+        width: 95vw;
+        background-color: rgba(16, 32, 49, 0.9);
+        // display: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .card {
+            flex-basis: calc(100% / 3);
+            // background-color: #102030;
+            border-radius: 10px;
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+
+            padding: 1rem;
+
+            .disc-cover {
+                // border: 1px solid pink;
+                width: 60%;
+            }
+
+            .year {
+                font-weight: bold;
+            }
+        }
+
+        > span {
+            border: 1px solid white;
+            border-radius: 50%;
+            color: white;
+            width: 30px;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            cursor: pointer;
+        }
+    }
 }
+
