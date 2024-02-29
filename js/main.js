@@ -25,13 +25,20 @@ createApp({
             this.displaySelectedAlbum = !this.displaySelectedAlbum
         },
         chooseAlbum(index) {
+            const data = {
+                albumIndex: index
+            }
+
             this.toggleDisplay()
             console.log(this.displaySelectedAlbum)
             axios
-            .get(this.apiUrl)
+            .post(this.apiUrl, data, 
+            {
+                Headers: { 'Content-Type': 'multpart/form-data' }
+            })
             .then( res => {
-                console.log(res.data[index])
-                this.selectedAlbum = res.data[index]
+                console.log(res.data)
+                this.selectedAlbum = res.data
             } )
         }
     }
