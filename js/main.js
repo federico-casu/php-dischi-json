@@ -18,6 +18,10 @@ createApp({
             axios
             .get(this.apiUrl)
             .then( res => {
+                res.data.forEach((element, index) => {
+                    element.id = index
+                });
+
                 this.dischi = res.data
             } )
         },
