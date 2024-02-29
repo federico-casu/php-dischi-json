@@ -30,13 +30,14 @@ createApp({
             }
 
             this.toggleDisplay()
-            console.log(this.displaySelectedAlbum)
+
             axios
             .post(this.apiUrl, data, 
             {
-                Headers: { 'Content-Type': 'multpart/form-data' }
+                headers: { 'Content-Type': 'multipart/form-data' }
             })
             .then( res => {
+                console.log('chiamata post effettuata correttamente')
                 console.log(res.data)
                 this.selectedAlbum = res.data
             } )
