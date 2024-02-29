@@ -47,7 +47,7 @@
             </div>
             <div id="web-app-bottom">
                 <div class="container">
-                    <div @click="chooseAlbum(index)" v-for="(disc, index) in dischi" :key="disc.id" class="card">
+                    <div @click="chooseAlbum(disc.id)" v-for="(disc, index) in dischi" :key="disc.id" class="card">
                         <figure class="disc-cover">
                             <img :src="disc.poster" :alt="disc.title">
                         </figure>
